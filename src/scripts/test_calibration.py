@@ -33,6 +33,8 @@ def expected_calibration_error(
     for bin_lower, bin_upper in zip(bin_lowers, bin_uppers):
         bin_size = 0
         bin_error = 0.0
+        correct_in_bin = 0
+        probability_in_bin = 0
 
         for i in range(total_samples):
             prob_pred = y_probs[i, np.argmax(y_probs[i])]
@@ -40,10 +42,12 @@ def expected_calibration_error(
             if bin_lower < prob_pred <= bin_upper:
                 bin_size += 1
                 is_correct = y_true[i] == np.argmax(y_probs[i])
-                bin_error += np.abs(prob_pred - is_correct)
-
+                correct_in_bin += is_correct
+                probability_in_bin += np.max(y_probs[i])
+            
         if bin_size > 0:
-            ece += bin_error / total_samples
+            bin_error = np.abs(correct_in_bin / bin_size - probability_in_bin / bin_size)
+            ece += bin_error * (bin_size / total_samples)
 
     return ece
 
