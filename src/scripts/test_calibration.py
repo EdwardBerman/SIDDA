@@ -21,7 +21,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Function to compute ECE
 def expected_calibration_error(
-    y_true: np.ndarray, y_probs: np.ndarray, num_bins: int = 10
+    y_true: np.ndarray, y_probs: np.ndarray, num_bins: int = 20
 ) -> float:
     """Compute the Expected Calibration Error (ECE) for multi-class classification."""
     bin_boundaries = np.linspace(0, 1, num_bins + 1)
@@ -52,7 +52,7 @@ def expected_calibration_error(
     return ece
 
 def over_under_confidence_ratio(
-    y_true: np.ndarray, y_probs: np.ndarray, num_bins: int = 10
+    y_true: np.ndarray, y_probs: np.ndarray, num_bins: int = 20
 ) -> float:
     """Compute the Expected Calibration Error (ECE) for multi-class classification."""
     bin_boundaries = np.linspace(0, 1, num_bins + 1)
