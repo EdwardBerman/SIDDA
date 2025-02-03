@@ -46,10 +46,45 @@ def expected_calibration_error(
                 probability_in_bin += np.max(y_probs[i])
             
         if bin_size > 0:
-            bin_error = np.abs(correct_in_bin / bin_size - probability_in_bin / bin_size)
+            bin_error = np.abs((correct_in_bin / bin_size) - (probability_in_bin / bin_size))
             ece += bin_error * (bin_size / total_samples)
 
     return ece
+
+def over_under_confidence_ratio(
+    y_true: np.ndarray, y_probs: np.ndarray, num_bins: int = 10
+) -> float:
+    """Compute the Expected Calibration Error (ECE) for multi-class classification."""
+    bin_boundaries = np.linspace(0, 1, num_bins + 1)
+    bin_lowers = bin_boundaries[:-1]
+    bin_uppers = bin_boundaries[1:]
+    over_under_confidence_ratio = 0.0
+    total_samples = len(y_true)
+
+    confidence_and_accuracy = np.zeros((num_bins, 2))
+
+    for bin_lower, bin_upper in zip(bin_lowers, bin_uppers):
+        bin_size = 0
+        bin_error = 0.0
+        correct_in_bin = 0
+        probability_in_bin = 0
+
+        for i in range(total_samples):
+            prob_pred = y_probs[i, np.argmax(y_probs[i])]
+
+            if bin_lower < prob_pred <= bin_upper:
+                bin_size += 1
+                is_correct = y_true[i] == np.argmax(y_probs[i])
+                correct_in_bin += is_correct
+                probability_in_bin += np.max(y_probs[i])
+            
+        if bin_size > 0:
+            bin_error = (correct_in_bin / bin_size) - (probability_in_bin / bin_size)
+            over_under_confidence_ratio += bin_error * (bin_size / total_samples)
+            confidence_and_accuracy[int(bin_lower * num_bins), 0] = bin_error
+            confidence_and_accuracy[int(bin_lower * num_bins), 1] = (probability_in_bin / bin_size)
+
+    return over_under_confidence_ratio, confidence_and_accuracy
 
 @torch.no_grad()
 def compute_metrics_with_calibration(
