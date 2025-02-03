@@ -233,6 +233,49 @@ def cnn_gzevo():
     model = CNN(num_channels=3, num_classes=6)
     return model
 
+## Shapes Models
+
+def c2_shapes():
+    model = ENN(
+        num_channels=1, num_classes=3, N=2, dihedral=False, input_size=(100, 100)
+    )
+    return model
+
+def c4_shapes():
+    model = ENN(
+        num_channels=1, num_classes=3, N=4, dihedral=False, input_size=(100, 100)
+    )
+    return model
+
+def c6_shapes():
+    model = ENN(
+        num_channels=1, num_classes=3, N=6, dihedral=False, input_size=(100, 100)
+    )
+    return model
+
+def c8_shapes():
+    model = ENN(
+        num_channels=1, num_classes=3, N=8, dihedral=False, input_size=(100, 100)
+    )
+    return model
+
+def c10_shapes():
+    model = ENN(
+        num_channels=1, num_classes=3, N=10, dihedral=False, input_size=(100, 100)
+    )
+    return model
+
+def c12_shapes():
+    model = ENN(
+        num_channels=1, num_classes=3, N=12, dihedral=False, input_size=(100, 100)
+    )
+    return model
+
+def d2_shapes():
+    model = ENN(
+        num_channels=1, num_classes=3, N=2, dihedral=True, input_size=(100, 100)
+    )
+    return model
 
 def d4_shapes():
     model = ENN(
@@ -240,6 +283,73 @@ def d4_shapes():
     )
     return model
 
+def d6_shapes():
+    model = ENN(
+        num_channels=1, num_classes=3, N=6, dihedral=True, input_size=(100, 100)
+    )
+    return model
+
+def d8_shapes():
+    model = ENN(
+        num_channels=1, num_classes=3, N=8, dihedral=True, input_size=(100, 100)
+    )
+    return model
+
+def d10_shapes():
+    model = ENN(
+        num_channels=1, num_classes=3, N=10, dihedral=True, input_size=(100, 100)
+    )
+    return model
+
+def d12_shapes():
+    model = ENN(
+        num_channels=1, num_classes=3, N=12, dihedral=True, input_size=(100, 100)
+    )
+    return model
+
+## Astro Objects models
+
+def c2_astro_objects():
+    model = ENN(
+        num_channels=1, num_classes=3, N=2, dihedral=False, input_size=(100, 100)
+    )
+    return model
+
+def c4_astro_objects():
+    model = ENN(
+        num_channels=1, num_classes=3, N=4, dihedral=False, input_size=(100, 100)
+    )
+    return model
+
+def c6_astro_objects():
+    model = ENN(
+        num_channels=1, num_classes=3, N=6, dihedral=False, input_size=(100, 100)
+    )
+    return model
+
+def c8_astro_objects():
+    model = ENN(
+        num_channels=1, num_classes=3, N=8, dihedral=False, input_size=(100, 100)
+    )
+    return model
+
+def c10_astro_objects():
+    model = ENN(
+        num_channels=1, num_classes=3, N=10, dihedral=False, input_size=(100, 100)
+    )
+    return model
+
+def c12_astro_objects():
+    model = ENN(
+        num_channels=1, num_classes=3, N=12, dihedral=False, input_size=(100, 100)
+    )
+    return model
+
+def d2_astro_objects():
+    model = ENN(
+        num_channels=1, num_classes=3, N=2, dihedral=True, input_size=(100, 100)
+    )
+    return model
 
 def d4_astro_objects():
     model = ENN(
@@ -247,11 +357,124 @@ def d4_astro_objects():
     )
     return model
 
+def d6_astro_objects():
+    model = ENN(
+        num_channels=1, num_classes=3, N=6, dihedral=True, input_size=(100, 100)
+    )
+    return model
+
+def d8_astro_objects():
+    model = ENN(
+        num_channels=1, num_classes=3, N=8, dihedral=True, input_size=(100, 100)
+    )
+    return model
+
+def d10_astro_objects():
+    model = ENN(
+        num_channels=1, num_classes=3, N=10, dihedral=True, input_size=(100, 100)
+    )
+    return model
+
+def d12_astro_objects():
+    model = ENN(
+        num_channels=1, num_classes=3, N=12, dihedral=True, input_size=(100, 100)
+    )
+    return model
+
+## MNIST-M models
+
+def c2_mnistm():
+    model = ENN(num_channels=3, num_classes=10, N=2, dihedral=False, input_size=(32, 32))
+    return model
+
+def c4_mnistm():
+    model = ENN(num_channels=3, num_classes=10, N=4, dihedral=False, input_size=(32, 32))
+    return model
+
+def c6_mnistm():
+    model = ENN(num_channels=3, num_classes=10, N=6, dihedral=False, input_size=(32, 32))
+    return model
+
+def c8_mnistm():
+    model = ENN(num_channels=3, num_classes=10, N=8, dihedral=False, input_size=(32, 32))
+    return model
+
+def c10_mnistm():
+    model = ENN(num_channels=3, num_classes=10, N=10, dihedral=False, input_size=(32, 32))
+    return model
+
+def c12_mnistm():
+    model = ENN(num_channels=3, num_classes=10, N=12, dihedral=False, input_size=(32, 32))
+    return model
+
+def d2_mnistm():
+    model = ENN(num_channels=3, num_classes=10, N=2, dihedral=True, input_size=(32, 32))
+    return model
 
 def d4_mnistm():
     model = ENN(num_channels=3, num_classes=10, N=4, dihedral=True, input_size=(32, 32))
     return model
 
+def d6_mnistm():
+    model = ENN(num_channels=3, num_classes=10, N=6, dihedral=True, input_size=(32, 32))
+    return model
+
+def d8_mnistm():
+    model = ENN(num_channels=3, num_classes=10, N=8, dihedral=True, input_size=(32, 32))
+    return model
+
+def d10_mnistm():
+    model = ENN(num_channels=3, num_classes=10, N=10, dihedral=True, input_size=(32, 32))
+    return model
+
+def d12_mnistm():
+    model = ENN(num_channels=3, num_classes=10, N=12, dihedral=True, input_size=(32, 32))
+    return model
+
+
+## GZ Evo model 
+
+def c2_gzevo():
+    model = ENN(
+        num_channels=3, num_classes=6, N=2, dihedral=False, input_size=(100, 100)
+    )
+    return model
+
+def c4_gzevo():
+    model = ENN(
+        num_channels=3, num_classes=6, N=4, dihedral=False, input_size=(100, 100)
+    )
+    return model
+
+def c6_gzevo():
+    model = ENN(
+        num_channels=3, num_classes=6, N=6, dihedral=False, input_size=(100, 100)
+    )
+    return model
+
+def c8_gzevo():
+    model = ENN(
+        num_channels=3, num_classes=6, N=8, dihedral=False, input_size=(100, 100)
+    )
+    return model
+
+def c10_gzevo():
+    model = ENN(
+        num_channels=3, num_classes=6, N=10, dihedral=False, input_size=(100, 100)
+    )
+    return model
+
+def c12_gzevo():
+    model = ENN(
+        num_channels=3, num_classes=6, N=12, dihedral=False, input_size=(100, 100)
+    )
+    return model
+
+def d2_gzevo():
+    model = ENN(
+        num_channels=3, num_classes=6, N=2, dihedral=True, input_size=(100, 100)
+    )
+    return model
 
 def d4_gzevo():
     model = ENN(
@@ -259,14 +482,90 @@ def d4_gzevo():
     )
     return model
 
+def d6_gzevo():
+    model = ENN(
+        num_channels=3, num_classes=6, N=6, dihedral=True, input_size=(100, 100)
+    )
+    return model
+
+def d8_gzevo():
+    model = ENN(
+        num_channels=3, num_classes=6, N=8, dihedral=True, input_size=(100, 100)
+    )
+    return model
+
+def d10_gzevo():
+    model = ENN(
+        num_channels=3, num_classes=6, N=10, dihedral=True, input_size=(100, 100)
+    )
+    return model
+
+def d12_gzevo():
+    model = ENN(
+        num_channels=3, num_classes=6, N=12, dihedral=True, input_size=(100, 100)
+    )
+    return model
+
 
 ## other order D_N models can be constructed by specifcying dihedral = True with varying N
 ## cyclic group models can be constructed by specifying dihedral = False with varying N
 
-shapes_models = {"cnn": cnn_shapes, "d4": d4_shapes}
-astro_objects_models = {"cnn": cnn_astro_objects, "d4": d4_astro_objects}
-mnistm_models = {"cnn": cnn_mnistm, "d4": d4_mnistm}
-gz_evo_models = {"cnn": cnn_gzevo, "d4": d4_gzevo}
+shapes_models = {"cnn": cnn_shapes,
+                 "c2": c2_shapes,
+                 "c4": c4_shapes,
+                 "c6": c6_shapes,
+                 "c8": c8_shapes,
+                 "c10": c10_shapes,
+                 "c12": c12_shapes,
+                 "d2": d2_shapes,
+                 "d4": d4_shapes,
+                 "d6": d6_shapes,
+                 "d8": d8_shapes,
+                 "d10": d10_shapes,
+                 "d12": d12_shapes}
+
+astro_objects_models = {"cnn": cnn_astro_objects,
+                        "c2": c2_astro_objects,
+                        "c4": c4_astro_objects,
+                        "c6": c6_astro_objects,
+                        "c8": c8_astro_objects,
+                        "c10": c10_astro_objects,
+                        "c12": c12_astro_objects,
+                        "d2": d2_astro_objects,
+                        "d4": d4_astro_objects,
+                        "d6": d6_astro_objects,
+                        "d8": d8_astro_objects,
+                        "d10": d10_astro_objects,
+                        "d12": d12_astro_objects}
+
+mnistm_models = {"cnn": cnn_mnistm, 
+                 "c2": c2_mnistm,
+                 "c4": c4_mnistm,
+                 "c6": c6_mnistm,
+                 "c8": c8_mnistm,
+                 "c10": c10_mnistm,
+                 "c12": c12_mnistm,
+                 "d2": d2_mnistm,
+                 "d4": d4_mnistm,
+                 "d6": d6_mnistm,
+                 "d8": d8_mnistm,
+                 "d10": d10_mnistm,
+                 "d12": d12_mnistm}
+
+
+gz_evo_models = {"cnn": cnn_gzevo, 
+                 "c2": c2_gzevo, 
+                 "c4": c4_gzevo, 
+                 "c6": c6_gzevo, 
+                 "c8": c8_gzevo, 
+                 "c10": c10_gzevo, 
+                 "c12": c12_gzevo, 
+                 "d2": d2_gzevo, 
+                 "d4": d4_gzevo, 
+                 "d6": d6_gzevo, 
+                 "d8": d8_gzevo, 
+                 "d10": d10_gzevo, 
+                 "d12": d12_gzevo}
 
 model_dict = {
     "shapes": shapes_models,
