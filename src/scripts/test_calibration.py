@@ -175,7 +175,9 @@ def compute_metrics_with_calibration(
 
     ece = float(expected_calibration_error(y_true, calibrated_proba))
 
-    return sklearn_report, ece, mean_brier_score
+    over_under_confidence_ratio_val, confidence_and_accuracy = over_under_confidence_ratio(y_true, calibrated_proba)
+
+    return sklearn_report, ece, mean_brier_score, over_under_confidence_ratio_val, confidence_and_accuracy
 
 
 @torch.no_grad()
@@ -238,7 +240,7 @@ def main(model_dir: str,
         return
 
     for model, model_file_name in models:
-        model_metrics, ece, brier_score = compute_metrics_with_calibration(
+        model_metrics, ece, brier_score, over_under_confidence_ratio_val, confidence_and_accuracy = compute_metrics_with_calibration(
             test_loader=test_dataloader,
             model=model,
             model_name=model_file_name,
@@ -250,6 +252,12 @@ def main(model_dir: str,
         # Add ECE and Brier score to the metrics
         model_metrics["ECE"] = ece
         model_metrics["Brier Score"] = brier_score
+        model_metrics["Over-Under Confidence Ratio"] = over_under_confidence_ratio_val
+
+        np.save(
+            os.path.join(metrics_dir, f"confidence_and_accuracy_{model_file_name}_{output_name}.npy"),
+            confidence_and_accuracy
+        )
 
         print("Compiling Metrics")
         output_file_name = f"{output_name}_{model_file_name}.yaml"
