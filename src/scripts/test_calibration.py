@@ -252,7 +252,7 @@ def main(model_dir: str,
         # Add ECE and Brier score to the metrics
         model_metrics["ECE"] = ece
         model_metrics["Brier Score"] = brier_score
-        model_metrics["Over-Under Confidence Ratio"] = over_under_confidence_ratio_val
+        model_metrics["Over-Under Confidence Ratio"] = float(over_under_confidence_ratio_val)
 
         np.save(
             os.path.join(metrics_dir, f"confidence_and_accuracy_{model_file_name}_{output_name}.npy"),
