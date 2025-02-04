@@ -228,7 +228,7 @@ class GZEvo(Dataset):
 
 dataset_dict = {
     "shapes": Shapes,
-    "astro_objects": AstroObjects,
+    "astronomical_objects": AstroObjects,
     "mnist_m": MnistM,
     "gz_evo": GZEvo,
 }
@@ -247,7 +247,7 @@ astro_objects_classes = ("elliptical", "spiral", "stars")
 
 classes_dict = {
     "shapes": shapes_classes,
-    "astro_objects": astro_objects_classes,
+    "astronomical_objects": astro_objects_classes,
     "mnist_m": mnist_m_classes,
     "gz_evo": gz_evo_classes,
 }
