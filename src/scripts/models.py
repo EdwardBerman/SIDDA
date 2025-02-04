@@ -569,7 +569,7 @@ gz_evo_models = {"cnn": cnn_gzevo,
 
 model_dict = {
     "shapes": shapes_models,
-    "astro_objects": astro_objects_models,
+    "astronomical_objects": astro_objects_models,
     "mnist_m": mnistm_models,
     "gz_evo": gz_evo_models,
 }
