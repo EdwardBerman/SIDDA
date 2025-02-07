@@ -261,8 +261,7 @@ def main(model_dir: str,
 
         print("Compiling Metrics")
         output_file_name = f"{output_name}_{model_file_name}.yaml"
-        with open(os.path.join(metrics_dir, output_file_name), "a") as file:
-            file.write("\n---\n")
+        with open(os.path.join(metrics_dir, output_file_name), "w") as file:
             yaml.dump(model_metrics, file)
 
         print(f"Metrics saved at {os.path.join(metrics_dir, output_file_name)}")
